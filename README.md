@@ -17,8 +17,10 @@ Tested with both Python 2.7 and Ubuntu 16.04.
     (HomologyDR-demo-env) $ python LandmarkingDR_synthetic_dataset.py
     (HomologyDR-demo-env) $ python Tearing.py
 
-You can see:
-- results of DR with datasets: Swiss-roll-with-a-hole and Fishing-Net in "LandmarkingDR_synthetic_dataset.py"
-- results of DR with datasets: Octa and Airfoil1 in "LandmarkingDR_Realword_dataset.py"
-- results of Tearing with datasets: Cylinder-3 and Cylinder-5 in "Tearing.py"
+You can see results of:
+- DR with datasets: Swiss-roll-with-a-hole and Fishing-Net in "LandmarkingDR_synthetic_dataset.py"
+- DR with datasets: Octa and Airfoil1 in "LandmarkingDR_Realword_dataset.py"
+- Tearing with datasets: Cylinder-3 and Cylinder-5 in "Tearing.py"
+
+# License
 
