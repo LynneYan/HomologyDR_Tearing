@@ -1,0 +1,52 @@
+from __future__ import division
+import os
+import sys
+sys.path.append(os.path.abspath('../src'))
+import subprocess
+import numpy as np
+import multiprocessing as mp
+import itertools as it
+import tda_util
+import file_util
+import ml_util
+from oct2py import octave
+
+from sklearn.datasets.samples_generator import make_swiss_roll
+from sklearn.datasets.samples_generator import make_s_curve
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from sklearn.manifold import TSNE
+import numpy as np
+from sklearn.metrics.pairwise import euclidean_distances
+import subprocess
+import math
+from sklearn import preprocessing
+
+_DATA_DIR = '../data'
+
+def stage_1(params_list):
+    print '\nSTAGE 1 Start.'
+    
+    print 'STAGE 1 Complete.'
+
+
+def stage_2(params_list):
+    print '\nSTAGE 2 Start.'
+
+    print 'STAGE 2 Complete.'
+    
+
+def stage_3(params_list):
+    print '\nSTAGE 3 Start.'
+  
+    print 'STAGE 3 Complete.'
+
+
+def stage_4(params_list, session_nums, num_tops):
+    print '\nSTAGE 4 Start.'
+
+    print 'STAGE 4 Complete.'
+
+        
+if __name__ == '__main__':
+    stage_1()
