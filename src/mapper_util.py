@@ -68,12 +68,12 @@ def _plot_data_with_skeleton(X, links, color, Landmark, filter_function, exp, da
 
 def _generate_Json_files(n_samples, noise_, outlier_, exps, _DATA_TYPE):
     for dataset in _DATA_TYPE:
-        print "------------------"+dataset+"--------------------------"
+        print ("------------------"+dataset+"--------------------------")
         for noise in noise_:
             for outlier in outlier_:
                 data_dir_ = os.path.join(_DATA_DIR, dataset+'_'+str(noise)+'_'+str(outlier))
                 for exp in range (1, exps+1):
-                    print "----------Exp_"+str(exp)+"----------------"
+                    print ("----------Exp_"+str(exp)+"----------------")
                     data_dir = os.path.join(data_dir_, 'Exp_'+str(exp))
                     Json_dir = os.path.join(data_dir, 'Json')
                     file_util.make_dir(Json_dir)
@@ -139,7 +139,7 @@ def _generate_Json_files(n_samples, noise_, outlier_, exps, _DATA_TYPE):
 
 def _generate_Json_files_R(_DATA_TYPE):
     for dataset in _DATA_TYPE:
-        print "------------------"+dataset+"--------------------------"
+        print ("------------------"+dataset+"--------------------------")
         data_dir = os.path.join(_DATA_DIR, dataset)
         Json_dir = os.path.join(data_dir, 'Json')
         file_util.make_dir(Json_dir)

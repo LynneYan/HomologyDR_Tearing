@@ -16,7 +16,7 @@ n_components = 2
 
 def _plot_evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE):
     for dataset in _DATA_TYPE:
-        print "------------------"+dataset+"--------------------------"
+        print ("------------------"+dataset+"--------------------------")
         for noise in noise_:
             for outlier in outlier_:
                 data_dir_ = os.path.join(_DATA_DIR, dataset+'_'+str(noise)+'_'+str(outlier))
@@ -74,14 +74,14 @@ def _plot_evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE):
 
 def _evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE):
     for dataset in _DATA_TYPE:
-        print "------------------"+dataset+"--------------------------"        
+        print ("------------------"+dataset+"--------------------------")        
         for noise in noise_:
             for outlier in outlier_:
                 data_dir_ = os.path.join(_DATA_DIR, dataset+'_'+str(noise)+'_'+str(outlier))
                 for exp in range (1,exps+1):
-                    print "----------Exp_"+str(exp)+"----------------"
+                    print ("----------Exp_"+str(exp)+"----------------")
 
-                    print '\nSTEP 1: generate persistent diagram'
+                    print ('\nSTEP 1: generate persistent diagram')
                     data_dir = os.path.join(data_dir_, 'Exp_'+str(exp))
                     Json_dir = os.path.join(data_dir, 'Json')
                     X_norm = os.path.join(data_dir, "X_norm.txt")
@@ -136,7 +136,7 @@ def _evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE):
                                     dataStart = True
 
 
-                    print '\nSTEP 2: Compute dim-1 persistent distance'   
+                    print ('\nSTEP 2: Compute dim-1 persistent distance')   
                     X_dim_0 = os.path.join(PD_dir, "X_norm_dim_0.txt")
                     X_dim_1 = os.path.join(PD_dir, "X_norm_dim_1.txt")
                     
@@ -160,7 +160,7 @@ def _evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE):
                         file_Y.write(ele)
                         file_Y.close()
      
-                    print "compute residual variance"
+                    print ("compute residual variance")
                     X = np.loadtxt(X_norm)
                     n_neighbors=8
                     n_components=2
@@ -174,7 +174,7 @@ def _evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE):
                                                  method='auto',
                                                  directed=False)
                     X_list = np.reshape(X_dist, len(X_dist)*len(X_dist))
-                    print "X_dist Done!"
+                    print ("X_dist Done!")
 
                     for Y_file_ in ["Y_Mapper", "Y_random", "Y_Isomap"]:
                         proj_ = np.loadtxt(os.path.join(Projection_dir, Y_file_+".txt"))
@@ -188,7 +188,7 @@ def _evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE):
 
 def _plot_evaluation_R(_DATA_TYPE):
     for dataset in _DATA_TYPE:
-        print "------------------"+dataset+"--------------------------"      
+        print ("------------------"+dataset+"--------------------------")      
         data_dir = os.path.join(_DATA_DIR, dataset)
     
         dist_Mapper_1 = []
@@ -235,8 +235,8 @@ def _plot_evaluation_R(_DATA_TYPE):
 
 def _evaluation_R(_DATA_TYPE):
     for dataset in _DATA_TYPE:
-        print "------------------"+dataset+"--------------------------"        
-        print '\nSTEP 1: generate persistent diagram'
+        print ("------------------"+dataset+"--------------------------")        
+        print ('\nSTEP 1: generate persistent diagram')
         data_dir = os.path.join(_DATA_DIR, dataset)
         Json_dir = os.path.join(data_dir, 'Json')
         Projection_dir = os.path.join(data_dir, 'Projection')
@@ -298,7 +298,7 @@ def _evaluation_R(_DATA_TYPE):
                         dataStart = True
 
 
-        print '\nSTEP 2: Compute dim-1 persistent distance'   
+        print ('\nSTEP 2: Compute dim-1 persistent distance')   
         X_dim_0 = os.path.join(PD_dir, "X_norm_dim_0.txt")
         X_dim_1 = os.path.join(PD_dir, "X_norm_dim_1.txt")
                     
@@ -322,7 +322,7 @@ def _evaluation_R(_DATA_TYPE):
             file_Y.write(ele)
             file_Y.close()
      
-        print "compute residual variance"
+        print ("compute residual variance")
         X = np.loadtxt(X_norm)
         n_neighbors=8
         n_components=2
@@ -336,7 +336,7 @@ def _evaluation_R(_DATA_TYPE):
                                      method='auto',
                                      directed=False)
         X_list = np.reshape(X_dist, len(X_dist)*len(X_dist))
-        print "X_dist Done!"
+        print ("X_dist Done!")
 
         for Y_file_ in ["Y_Mapper", "Y_random", "Y_Isomap"]:
             proj_ = np.loadtxt(os.path.join(Projection_dir, Y_file_+".txt"))

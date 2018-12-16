@@ -8,7 +8,7 @@ import tda_util
 
 
 def stage_1(n_samples, noise_, outlier_, exps, _DATA_TYPE):
-    print '\nSTAGE 1 Start.'
+    print ('\nSTAGE 1 Start.')
     for exp in range (1,exps+1):
         for noise in noise_:
             for outlier in outlier_:
@@ -16,26 +16,26 @@ def stage_1(n_samples, noise_, outlier_, exps, _DATA_TYPE):
                     file_util._generate_U_SH_data(n_samples, noise, outlier, exp)
                 if 'Fishing_net' in _DATA_TYPE:
                     file_util._generate_UFN_data(n_samples*3, noise, outlier, exp)
-    print 'STAGE 1 Complete.'
+    print ('STAGE 1 Complete.')
 
 
 def stage_2(n_samples, noise_, outlier_, exps, _DATA_TYPE):
-    print '\nSTAGE 2 Start.'
+    print ('\nSTAGE 2 Start.')
     mapper_util._generate_Json_files(n_samples, noise_, outlier_, exps, _DATA_TYPE)
-    print 'STAGE 2 Complete.'
+    print ('STAGE 2 Complete.')
     
 
 def stage_3(n_samples, noise_, outlier_, exps, _DATA_TYPE):
-    print '\nSTAGE 3 Start.'
+    print ('\nSTAGE 3 Start.')
     homologyDR_util._projection(n_samples, noise_, outlier_, exps, _DATA_TYPE)
-    print 'STAGE 3 Complete.'
+    print ('STAGE 3 Complete.')
 
 
 def stage_4(n_samples, noise_, outlier_, exps, _DATA_TYPE):
-    print '\nSTAGE 4 Start.'
+    print ('\nSTAGE 4 Start.')
     tda_util._evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE)
     tda_util._plot_evaluation(n_samples, noise_, outlier_, exps, _DATA_TYPE)
-    print 'STAGE 4 Complete.'
+    print ('STAGE 4 Complete.')
 
         
 if __name__ == '__main__':

@@ -32,7 +32,7 @@ def generate_cut_graph(X, kng, sgn_info, lim_info):
     lim_val = lim_info[1]
     
     if len(sgn_info)==1:
-        print "Tearing Graph..."
+        print ("Tearing Graph...")
         for i in range (0, len(X)):
             for j in range (0, len(X)):
                 if kng[i, j]>0:
@@ -46,7 +46,7 @@ def generate_cut_graph(X, kng, sgn_info, lim_info):
         sgn2 = sgn_info[1][0]
         sgn_dirc2 = sgn_info[1][1]
         sgn_val2 = sgn_info[1][2]
-        print "Tearing Graph..."
+        print ("Tearing Graph...")
         for i in range (0, len(X)):
             for j in range (0, len(X)):
                 if kng[i, j]>0:
@@ -64,7 +64,7 @@ def generate_cut_graph(X, kng, sgn_info, lim_info):
                         if ((X[i, lim_dirc]>=lim_val and X[j, lim_dirc]<lim_val) or (X[i, lim_dirc]<=lim_val and X[j, lim_dirc]>lim_val)) and (X[i, sgn_dirc] < sgn_val )and (X[i, sgn_dirc2] < sgn_val2 ):
                             kng[i, j]=0
                             
-    print "Rebuild graph..."
+    print ("Rebuild graph...")
     dist_matrix = graph_shortest_path(kng,
                                       method='auto',
                                       directed=False)
@@ -90,20 +90,20 @@ def _projection(n_samples, noise_, outlier_, exps, _DATA_TYPE):
                 if outlier >0:
                     title = dataset +" with outliers"
                     n_neighbors = 8
-                print "------------------"+title+"--------------------------"
+                print ("------------------"+title+"--------------------------")
                 for exp in range (1, exps+1):
-                    print "----------Exp_"+str(exp)+"----------------"
+                    print ("----------Exp_"+str(exp)+"----------------")
                     data_dir = os.path.join(data_dir_, 'Exp_'+str(exp))
                     Json_dir = os.path.join(data_dir, 'Json')
                     Projection_dir = os.path.join(data_dir, 'Projection')
                     file_util.make_dir(Projection_dir)
                 
-                    print "Loading data set..."
+                    print ("Loading data set...")
                     sys.stdout.flush()
                     X, color = file_util._get_normalized_input_data(data_dir)
                     in_file_json = os.path.join(Json_dir, "Y_base_point_geodesic_distance.json")
                     ninst, dim = X.shape
-                    print "Done."
+                    print ("Done.")
                     color_file = os.path.join(Json_dir, "Y_base_point_geodesic_distance.txt")
                     color = np.loadtxt(color_file)
                                
@@ -183,13 +183,13 @@ def _projection_R(_DATA_TYPE):
         if dataset == 'airfoil1':
             filter_function = "base_point_geodesic_distance"
                  
-        print "Loading data set..."
+        print ("Loading data set...")
         sys.stdout.flush()
         infile = os.path.join(data_dir, 'X.txt')
         X = np.loadtxt(infile)
         in_file_json = os.path.join(Json_dir, 'Y_'+filter_function+'.json')
         ninst, dim = X.shape
-        print "Done."
+        print ("Done.")
         color_file = os.path.join(Json_dir, 'Y_'+filter_function+'.txt') 
         color = np.loadtxt(color_file)
                                
@@ -272,13 +272,13 @@ def _projection_T(_DATA_TYPE):
         if dataset.startswith("cylinder"):
             filter_function = "width"
                  
-        print "Loading data set..."
+        print ("Loading data set...")
         sys.stdout.flush()
         infile = os.path.join(data_dir, 'X.txt')
         X = np.loadtxt(infile)
         in_file_json = os.path.join(Json_dir, 'Y_'+filter_function+'.json')
         ninst, dim = X.shape
-        print "Done."
+        print ("Done.")
         color_file = os.path.join(Json_dir, 'Y_'+filter_function+'.txt') 
         color = np.loadtxt(color_file)
                                

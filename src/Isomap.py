@@ -18,7 +18,7 @@ def Landmark_Isomap(D, ndims, landmarks, dist_matrix):
 
     ALL_matrix = D
 
-    print "Generate NN Graph..."
+    print ("Generate NN Graph...")
     if dist_matrix:
         dist_matrix_ = np.loadtxt(os.path.join(dist_matrix,"X_dist.txt"))
     else:
@@ -26,7 +26,7 @@ def Landmark_Isomap(D, ndims, landmarks, dist_matrix):
         nbrs_.fit(ALL_matrix)
         kng = kneighbors_graph(nbrs_, n_neighbors, mode='distance', n_jobs=n_jobs)
 
-        print "Generate distance matrix of NN graph..."
+        print ("Generate distance matrix of NN graph...")
         dist_matrix_ = graph_shortest_path(kng,
                                            method='auto',
                                            directed=False)
