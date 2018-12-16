@@ -1,11 +1,14 @@
-
-This is a demo for visualization tools for calculate the average of merge trees.
-
-    $ virtualenv AMT-demo-env
-    $ source AMT-demo-env/bin/activate
-    (AMT-demo-env) $ pip install -r requirements.txt
-    (AMT-demo-env) $ python app.py
-    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit
-    * Restarting with stat
-    * Debugger is active!
 # HomologyDR_Tearing
+
+This is a demo for implementation of homology-preserving dimension reduction algorithm. The implementation is described in "Homology-Preserving Dimensionality Reduction via Manifold Landmarking and Tearing".
+
+<center><img src="octa.png" width="512"></center>
+<center><img src="tearing.png" width="512"></center>
+
+    $ virtualenv HomologyDR-demo-env
+    $ source HomologyDR-demo-env/bin/activate
+    (HomologyDR-demo-env) $ pip install -r requirements.txt
+    (HomologyDR-demo-env) $ cd scripts
+    (HomologyDR-demo-env) $ python LandmarkingDR_Realword_dataset.py
+    (HomologyDR-demo-env) $ python LandmarkingDR_synthetic_dataset.py
+    (HomologyDR-demo-env) $ python Tearing.py

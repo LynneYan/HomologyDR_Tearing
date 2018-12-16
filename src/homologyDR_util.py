@@ -143,7 +143,7 @@ def _projection(n_samples, noise_, outlier_, exps, _DATA_TYPE):
     
                     ax = fig.add_subplot(312)
                     ax.scatter(Y[:,0].real,Y[:, 1].real,s=3, c = color,cmap=plt.cm.get_cmap('coolwarm'))
-                    ax.scatter(proj_landmark[:, 0], proj_landmark[:, 1], c='black', s=100,  marker=(5, 1),label='Landmarks(Centroid)')
+                    ax.scatter(proj_landmark[:, 0], proj_landmark[:, 1], c='black', s=100,  marker=(5, 1),label='Landmarks(Homology-Preserving)')
 
                     link_num = len(links)
                     for i in range (0, link_num):
@@ -230,7 +230,7 @@ def _projection_R(_DATA_TYPE):
     
         ax = fig.add_subplot(132)
         ax.scatter(Y[:,0].real,Y[:, 1].real,s=1, c = color,cmap=plt.cm.get_cmap('coolwarm'))
-        ax.scatter(proj_landmark[:, 0], proj_landmark[:, 1], c='black', s=50,  marker=(5, 1),label='Landmarks(Centroid)')
+        ax.scatter(proj_landmark[:, 0], proj_landmark[:, 1], c='black', s=50,  marker=(5, 1),label='Landmarks(Homology-Preserving)')
 
         link_num = len(links)
         for i in range (0, link_num):
@@ -297,7 +297,7 @@ def _projection_T(_DATA_TYPE):
         proj_landmark = Y[Index_of_landmarks, :]
         ax.scatter(Y[:, 0], Y[:, 1], s=10, c=color,cmap=plt.cm.get_cmap('coolwarm'), alpha=0.7)
  
-        ax.scatter(proj_landmark[:, 0],proj_landmark[:, 1],c='black', s=70,  marker=(5, 1),label='Landmarks(Topology)')
+        ax.scatter(proj_landmark[:, 0],proj_landmark[:, 1],c='black', s=70,  marker=(5, 1),label='Landmarks(Homology-Preserving)')
         for i in range (0, link_num):
             if abs(proj_landmark[links[i][0]][0]-proj_landmark[links[i][1]][0]) <100:
                 ax.plot( [proj_landmark[links[i][0]][0], proj_landmark[links[i][1]][0]], [proj_landmark[links[i][0]][1],proj_landmark[links[i][1]][1]],color = 'black')
@@ -321,7 +321,7 @@ def _projection_T(_DATA_TYPE):
             np.savetxt(out_file, Y, fmt="%f")
             ax = fig.add_subplot(220+pltid)
             ax.scatter(Y[:, 0], Y[:, 1], s =10, c=color,cmap=plt.cm.get_cmap('coolwarm'), alpha=0.7)
-            ax.scatter(Y[Index_of_landmarks, 0], Y[Index_of_landmarks, 1],c='black', s=70,  marker=(5, 1),label='Landmarks(Topology)')
+            ax.scatter(Y[Index_of_landmarks, 0], Y[Index_of_landmarks, 1],c='black', s=70,  marker=(5, 1),label='Landmarks(Homology-Preserving)')
             for i in range (0, link_num):
                 if abs(proj_landmark[links[i][0]][0]-proj_landmark[links[i][1]][0]) <2:
                     ax.plot( [proj_landmark[links[i][0]][0], proj_landmark[links[i][1]][0]], [proj_landmark[links[i][0]][1],proj_landmark[links[i][1]][1]],color = 'black')
