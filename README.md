@@ -1,6 +1,6 @@
 # HomologyDR_Tearing
 
-This is a demo for implementation of homology-preserving dimension reduction(DR) algorithm. The implementation is described in "Homology-Preserving Dimensionality Reduction via Manifold Landmarking and Tearing".
+This is a demo for implementation of homology-preserving dimension reduction(DR) algorithm. The implementation is described in ["Homology-Preserving Dimensionality Reduction via Manifold Landmarking and Tearing"](https://arxiv.org/pdf/1806.08460.pdf).
 
 <center><img src="octa.png" width="512"></center>
 <center><img src="tearing.png" width="512"></center>
