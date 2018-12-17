@@ -36,4 +36,9 @@ if __name__ == '__main__':
     stage_1(_DATA_TYPE)
     stage_2(_DATA_TYPE)
     stage_3(_DATA_TYPE)
-    stage_4(_DATA_TYPE)
+    """
+    You may also want to compare the results of this algorithm with classic isomap
+    and random landmark isomap. Our evaluztion uses 1-D wasserstein distance residual
+    variance. You need to install Ripser and Hera to run the following stage.
+    """
+    #stage_4(_DATA_TYPE)
