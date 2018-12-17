@@ -9,14 +9,14 @@ This is a demo for implementation of homology-preserving dimension reduction(DR)
 
 Tested with both Python 2.7 and Ubuntu 16.04.
 
-#### What to expect
+### What to expect
 
 You can see results of:
 - DR with datasets: Swiss-roll-with-a-hole and Fishing-Net in "LandmarkingDR_synthetic_dataset.py"
 - DR with datasets: Octa and Airfoil1 in "LandmarkingDR_Realword_dataset.py"
 - Tearing with datasets: Cylinder-3 and Cylinder-5 in "Tearing.py"
 
-#### Run
+### Run
 
     $ virtualenv HomologyDR-demo-env
     $ source HomologyDR-demo-env/bin/activate
@@ -26,10 +26,9 @@ You can see results of:
     (HomologyDR-demo-env) $ python LandmarkingDR_synthetic_dataset.py
     (HomologyDR-demo-env) $ python Tearing.py
 
-#### Note
+### Note
 
-You can run all the codes except stage 4 in "LandmarkingDR_synthetic_dataset.py" and "LandmarkingDR_Realword_dataset.py". Stage 4 compares the results of our algorithm with classic isomap and random landmark isomap. This evaluztion uses 1-D wasserstein distance residual variance. You need to install [Ripser](https://github.com/Ripser/ripser) and [Hera](https://bitbucket.org/grey_narn/hera) to run the following stage.
-
+Following steps above, you can run all the codes except stage 4 in "LandmarkingDR_synthetic_dataset.py" and "LandmarkingDR_Realword_dataset.py". Stage 4 compares the results of our algorithm with classic isomap and random landmark isomap. This evaluztion uses 1-D wasserstein distance residual variance. You need to install [Ripser](https://github.com/Ripser/ripser) and [Hera](https://bitbucket.org/grey_narn/hera) to run the this stage.
 
 
 # License
