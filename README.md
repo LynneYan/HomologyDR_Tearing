@@ -26,9 +26,10 @@ You can see results of:
     (HomologyDR-demo-env) $ python LandmarkingDR_synthetic_dataset.py
     (HomologyDR-demo-env) $ python Tearing.py
 
-### Note
+### Notes
 
-Following steps above, you can run all the codes except stage 4 in "LandmarkingDR_synthetic_dataset.py" and "LandmarkingDR_Realword_dataset.py". Stage 4 compares the results of our algorithm with classic isomap and random landmark isomap. This evaluztion uses 1-D wasserstein distance residual variance. You need to install [Ripser](https://github.com/Ripser/ripser) and [Hera](https://bitbucket.org/grey_narn/hera) to run the this stage.
+- If you want to run stage 4 in "LandmarkingDR*.py", please install [Ripser](https://github.com/Ripser/ripser) and [Hera](https://bitbucket.org/grey_narn/hera).
+- We modified mapper algorithm based on [KeplerMapper](https://github.com/MLWave/kepler-mapper), including adding more filter functions. You can see the modification in [/src/km.py](https://github.com/LynneYan/HomologyDR_Tearing/blob/master/src/km.py)
 
 
 # License
