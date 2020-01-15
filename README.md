@@ -34,3 +34,4 @@ You can see results of:
 
 # License
 
+Standard MIT disclaimer applies, see LICENSE for full text.
